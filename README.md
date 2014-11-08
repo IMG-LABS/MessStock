@@ -1,6 +1,6 @@
 Mess-Stock
 =========
-# An API for the Stock Section of the Malviya Bhawan Mess of IIT ROORKEE , using Django Rest Framework
+An API for the Stock Section of the Malviya Bhawan Mess of IIT ROORKEE , using Django Rest Framework
 
 Download and Setup the project
 ------------------------------
