@@ -1,0 +1,8 @@
+Django==1.6.5
+PyJWT==0.2.1
+Pygments==1.6
+argparse==1.2.1
+django-cors-headers==0.12
+djangorestframework==2.3.13
+djangorestframework-jwt==0.1.5
+wsgiref==0.1.2
