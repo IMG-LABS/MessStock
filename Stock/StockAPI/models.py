@@ -6,7 +6,7 @@ from django.utils import timezone
 # Create your models here.
 class Item(models.Model):
 	item_id=models.CharField(max_length=10,primary_key=True)
-	item_name=models.CharField(max_length=30)
+	item_name=models.CharField(max_length=30)#blank=True
 	item_unit=models.CharField(max_length=10)
 	quantity=models.IntegerField(default=0)
 	balance=models.IntegerField(default=0)

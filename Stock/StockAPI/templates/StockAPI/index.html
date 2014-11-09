@@ -1,0 +1,9 @@
+{% if latest_items %}
+    <ul>
+    {% for p in latest_items %}
+        <li><a href="/StockAPI/item/{{ p.item_id }}/">{{ p.item_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Items are available.</p>
+{% endif %}

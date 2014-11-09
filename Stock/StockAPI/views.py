@@ -3,6 +3,9 @@ from StockAPI.serializers import ItemSerializer,UnitSerializer,TransactionSerial
 #from django.shortcuts import render
 #from django.http import HttpResponse
 from django.http import Http404
+from django.template import RequestContext,loader
+from django.http import HttpResponse
+from django.shortcuts import render,get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import renderers
@@ -155,5 +158,26 @@ class TransactionDetail(generics.ListCreateAPIView):
     """
     model = Transaction
     serializer_class = TransactionSerializer
+
+
+def index(request):
+    latest_items=Item.objects.all().order_by('timestamp')[:2]
+    # output=', '.join([p.item_name for p in latest_items])
+    # return HttpResponse(output)
+    """
+    template = loader.get_template('StockAPI/index.html')
+    context = RequestContext(request, {
+        'latest_items': latest_items,
+    })
+    return HttpResponse(template.render(context))
+    """
+    #a shortcut render
+    context = {'latest_items': latest_items}
+    return render(request, 'StockAPI/index.html', context)
+
+def detail(request,item_id):
+    item=get_object_or_404(Item,pk=item_id)
+    return render(request,'StockAPI/detail.html',{'item':item})
+
 
 

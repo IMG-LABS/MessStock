@@ -19,8 +19,10 @@ class TransactionAdmin(admin.ModelAdmin):
         ('Comments', {'fields': ['comments']}),
     ]
     list_display = ('item','quantity', 'inventory','timestamp')
-    list_filter=['timestamp']
-    search_fields=['item']
+    list_filter=['timestamp'] #date_hierarchy : another way 
+    search_fields=['item'] #ordering 
+    # filter_horizontal : check ! works on many to many fields
+    # raw_id_fields : check!
 
 admin.site.register(Item,ItemAdmin)
 admin.site.register(Unit,UnitAdmin)
