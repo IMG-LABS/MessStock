@@ -17,6 +17,6 @@ Running the API
 
 Accessing the API
 -----------------
-- List of the Stock Items: http://localhost:8000/MessStock/item/
-- List of the Transactions: http://localhost:8000/MessStock/transaction/
+- List of the Stock Items: http://localhost:8000/StockAPI/item/
+- List of the Transactions: http://localhost:8000/StockAPI/transaction/
 
